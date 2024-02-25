@@ -2,8 +2,8 @@ from tkinter import *
 import random
 
 
-GAME_WIDTH = 700
-GAME_HEIGHT = 700
+GAME_WIDTH = 650
+GAME_HEIGHT = 650
 SPEED = 80
 SPACE_SIZE = 20
 BODY_PARTS = 3
@@ -61,7 +61,7 @@ def next_turn(snake, food):
         global score
         score += 1
 
-        label.config(text=f'SCORE: {score}')
+        label.config(text=f'SCORE = {score}')
         canvas.delete('food')
 
         food = Food()
@@ -112,7 +112,7 @@ def check_collisions(snake):
 def game_over():
     canvas.delete(ALL)
     canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2, font=(
-        "atlantistextregular", 50), text="IT'S GAME OVER :(", fill='red', tag='game_over')
+        "consolas", 50), text="IT'S GAME OVER :(", fill='red', tag='game_over')
 
 
 window = Tk()
@@ -123,7 +123,7 @@ score = 0
 
 direction = 'down'
 label = Label(window, text=f"SCORE = {score}",
-              font=('atlantistextregular', 40))
+              font=('consolas', 40))
 label.pack()
 
 
